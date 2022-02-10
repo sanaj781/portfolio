@@ -1,6 +1,8 @@
-import { leafOak, lightsHoliday } from "fontawesome";
 import React, { Component } from "react";
 import avatar from "../imgs/avatar.jpg";
+import attachmentIcon from "../imgs/atachmentIcon.svg";
+import smileIcon from "../imgs/smileIcon.svg";
+import GitHubLogo from "../imgs/GitHub-Mark.svg";
 class Messanger extends Component {
   state = {
     inputValue: "Click here to start...",
@@ -67,52 +69,51 @@ class Messanger extends Component {
     startTyping(0);
   };
 
-  handleChangeInput = (e) => {
-    //   let inputValue = this.state.inputValue;
-    //   inputValue = e.target.value;
-    //   this.setState({ inputValue });
-    //   document.querySelector("input").disable = "true";
-  };
-  //   handleBlurInput = () => {
-  //     let inputValue = this.state.inputValue;
-  //     if (inputValue === "") inputValue = "Write a message...";
-  //     this.setState({ inputValue });
-  //   };
+  handleChangeInput = (e) => {};
 
   render() {
     return (
       <React.Fragment>
-        <div className="App">
-          <h1> GitHub</h1>
-        </div>
+        <div className="app">
+          <div className="GitHubLogo">
+            <a href="https://github.com/sanaj781" target="_blank">
+              <img className="github-icon" src={GitHubLogo} alt="" />
+              GitHub
+            </a>
+          </div>
 
-        <div className="messanger-area">
-          <div id="message-area" className="mesanger-output-area">
-            {this.state.messages.map((message) => (
-              <div key={message.key} className={message.class}>
-                <img src={avatar} alt="avatar" className="img-avatar" />
-                <div className="name-text-message">
-                  <div className="user-name">Denys</div>
-                  <div>{message.message}</div>
+          <div className="messanger-area">
+            <div id="message-area" className="mesanger-output-area">
+              {this.state.messages.map((message) => (
+                <div key={message.key} className={message.class}>
+                  <img src={avatar} alt="avatar" className="img-avatar" />
+                  <div className="name-text-message">
+                    <div className="user-name">Denys</div>
+                    <div>{message.message}</div>
+                  </div>
                 </div>
-              </div>
-            ))}
-          </div>
-          <div className="buttons-section">
-            <button className="button-one">My Projects</button>
-            <button className="button-middle">My Skills</button>
-            <button className="button-last">Curriculum Vitae</button>
-          </div>
-          <div className="message-input-field-area">
-            <input
-              disabled={this.state.inputDisabled}
-              type="text"
-              value={this.state.inputValue}
-              //   onBlur={this.handleBlurInput}
-              onFocus={this.handleFocusInput}
-              onChange={this.handleChangeInput}
-              className="message-input-field"
-            ></input>
+              ))}
+            </div>
+            <div className="buttons-section">
+              <button className="button-one">My Projects</button>
+              <button className="button-middle">My Skills</button>
+              <button className="button-last">Curriculum Vitae</button>
+            </div>
+            <div className="ReactFragmentStartSign">&lt;React.Fragment&gt;</div>
+            <div className="ReactFragmentEndSign">&lt;/React.Fragment&gt;</div>
+
+            <div className="message-input-field-area">
+              <img src={attachmentIcon} alt="" />
+              <img className="icon" src={smileIcon} alt="" />
+              <input
+                disabled={this.state.inputDisabled}
+                type="text"
+                value={this.state.inputValue}
+                onFocus={this.handleFocusInput}
+                onChange={this.handleChangeInput}
+                className="message-input-field"
+              ></input>
+            </div>
           </div>
         </div>
       </React.Fragment>
