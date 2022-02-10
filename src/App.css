@@ -49,6 +49,7 @@
   padding-left: 1em;
   font-size: 1.5em;
 }
+
 .message-input-field-area {
   background-color: white;
   z-index: 1;
@@ -59,9 +60,9 @@
   border-radius: 25px;
 }
 .message-input-field {
-  margin: 0 10%;
+  margin: 0 5%;
   height: 49px;
-  width: 76%;
+  width: 86%;
   border: none;
   padding: 0;
   font-size: 1em;
