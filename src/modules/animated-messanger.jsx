@@ -11,12 +11,14 @@ class Messanger extends Component {
         message: "Hi there! Welcome to my Portfolio Page!",
         class: "message-body ",
         key: 1,
+        date: "",
       },
       {
         message:
           "I am a Front-End developer and I am inviting you to check out my projects",
         class: " message-body ",
         key: 2,
+        date: "",
       },
     ],
     inputDisabled: false,
@@ -26,18 +28,17 @@ class Messanger extends Component {
     //clear and disabling the input field and
     let inputValue = this.state.inputValue;
     let inputDisabled = this.state.inputDisabled;
-
-    inputDisabled = true;
+    let mesangerOutputArea = this.state.mesangerOutputArea;
     inputValue = "";
+    inputDisabled = true;
+
     this.setState({ inputValue, inputDisabled });
 
     //function which start typing mesaages
     let i = 0;
-    let id;
-
+    let date;
     const messages = [...this.state.messages];
-    console.log(messages.length);
-    let messageBySymbols = messages[0].message.split("");
+    let messageBySymbols;
     const startTyping = (id) => {
       //splitting message into symbols for animation
       messageBySymbols = messages[id].message.split("");
@@ -50,20 +51,31 @@ class Messanger extends Component {
         }
         //When message has typed
         else {
-          messages[id].class += "not-hidden";
+          //getting a current date and time
+          date = new Date();
+          messages[id].date =
+            "0" +
+            date.getDay() +
+            " " +
+            date.toLocaleString("default", { month: "long" }) +
+            " " +
+            date.getHours() +
+            ":" +
+            date.getMinutes();
+
+          messages[id].class += "not-hidden-message";
           clearInterval(typingInterval);
           //Post a message
           inputValue = "";
-          this.setState({ inputValue });
+          this.setState({ inputValue, messages });
           i = 0;
+
           if (id < messages.length - 1) {
             id += 1;
-            console.log(id);
-
             startTyping(id);
           }
         }
-      }, 80);
+      }, 40);
     };
 
     startTyping(0);
@@ -72,6 +84,12 @@ class Messanger extends Component {
   handleChangeInput = (e) => {};
 
   render() {
+    let messageOutputAreaClassName = "mesanger-output-area";
+    let messangerAreaClassName = "messanger-area";
+    if (this.state.inputDisabled === true) {
+      messageOutputAreaClassName += " not-hidden";
+      messangerAreaClassName += " backgorund-white";
+    }
     return (
       <React.Fragment>
         <div className="app">
@@ -82,13 +100,16 @@ class Messanger extends Component {
             </a>
           </div>
 
-          <div className="messanger-area">
-            <div id="message-area" className="mesanger-output-area">
+          <div className={messangerAreaClassName}>
+            <div id="message-area" className={messageOutputAreaClassName}>
               {this.state.messages.map((message) => (
                 <div key={message.key} className={message.class}>
                   <img src={avatar} alt="avatar" className="img-avatar" />
                   <div className="name-text-message">
-                    <div className="user-name">Denys</div>
+                    <div className="user-name">
+                      <div className="name"> Denys</div>
+                      <div className="date">{message.date}</div>
+                    </div>
                     <div>{message.message}</div>
                   </div>
                 </div>
