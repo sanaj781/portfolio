@@ -3,6 +3,8 @@ import avatar from "../imgs/avatar.jpg";
 import attachmentIcon from "../imgs/atachmentIcon.svg";
 import smileIcon from "../imgs/smileIcon.svg";
 import GitHubLogo from "../imgs/GitHub-Mark.svg";
+import CV from "../imgs/CV ENG.pdf";
+import { Link } from "react-router-dom";
 class Messanger extends Component {
   state = {
     inputValue: "Click here to start...",
@@ -28,7 +30,6 @@ class Messanger extends Component {
     //clear and disabling the input field and
     let inputValue = this.state.inputValue;
     let inputDisabled = this.state.inputDisabled;
-    let mesangerOutputArea = this.state.mesangerOutputArea;
     inputValue = "";
     inputDisabled = true;
 
@@ -53,15 +54,18 @@ class Messanger extends Component {
         else {
           //getting a current date and time
           date = new Date();
+          const minutes =
+            date.getMinutes() < 10
+              ? "0" + date.getMinutes()
+              : date.getMinutes();
           messages[id].date =
-            "0" +
-            date.getDay() +
+            date.getDate() +
             " " +
             date.toLocaleString("default", { month: "long" }) +
             " " +
             date.getHours() +
             ":" +
-            date.getMinutes();
+            minutes;
 
           messages[id].class += "not-hidden-message";
           clearInterval(typingInterval);
@@ -82,25 +86,43 @@ class Messanger extends Component {
   };
 
   handleChangeInput = (e) => {};
-
   render() {
     let messageOutputAreaClassName = "mesanger-output-area";
     let messangerAreaClassName = "messanger-area";
+    let ReactFragmentStartSign = "ReactFragmentStartSign noselect";
+    let ReactFragmentEndSign = "ReactFragmentEndSign noselect";
+    let mainSignClass = "main-sign noselect";
     if (this.state.inputDisabled === true) {
+      //scrolling to the input field to
+      document
+        .getElementsByClassName("message-input-field-area")[0]
+        .scrollIntoView(false);
+
       messageOutputAreaClassName += " not-hidden";
-      messangerAreaClassName += " backgorund-white";
+      messangerAreaClassName += " backgorund-white bordered";
+      ReactFragmentStartSign += " not-hidden";
+      ReactFragmentEndSign += " not-hidden";
+      mainSignClass = "hidden";
     }
+
     return (
       <React.Fragment>
         <div className="app">
           <div className="GitHubLogo">
-            <a href="https://github.com/sanaj781" target="_blank">
+            <a
+              href="https://github.com/sanaj781"
+              target="_blank"
+              rel="noreferrer"
+            >
               <img className="github-icon" src={GitHubLogo} alt="" />
+              <br />
               GitHub
             </a>
           </div>
-
           <div className={messangerAreaClassName}>
+            <div className={mainSignClass}>
+              Denys`s Shevchenko Portfolio Page
+            </div>
             <div id="message-area" className={messageOutputAreaClassName}>
               {this.state.messages.map((message) => (
                 <div key={message.key} className={message.class}>
@@ -116,12 +138,18 @@ class Messanger extends Component {
               ))}
             </div>
             <div className="buttons-section">
-              <button className="button-one">My Projects</button>
-              <button className="button-middle">My Skills</button>
-              <button className="button-last">Curriculum Vitae</button>
+              <Link to="/projects">
+                <div className="button button-one">My Projects</div>
+              </Link>
+              <Link to="/skills">
+                <div className="button button-middle">My Skills</div>
+              </Link>
+              <a href={CV}>
+                <div className="button button-last">Curriculum Vitae</div>
+              </a>
             </div>
-            <div className="ReactFragmentStartSign">&lt;React.Fragment&gt;</div>
-            <div className="ReactFragmentEndSign">&lt;/React.Fragment&gt;</div>
+            <div className={ReactFragmentStartSign}>&lt;React.Fragment&gt;</div>
+            <div className={ReactFragmentEndSign}>&lt;/React.Fragment&gt;</div>
 
             <div className="message-input-field-area">
               <img src={attachmentIcon} alt="" />

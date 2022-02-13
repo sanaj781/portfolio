@@ -1,10 +1,31 @@
-.app {
+@import url("https://fonts.googleapis.com/css2?family=Gochi+Hand&family=Lato:wght@100&display=swap");
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
 }
+
 .GitHubLogo {
   margin-left: 50px;
   margin-top: 50px;
   font-size: 1.5em;
   font-weight: bold;
+}
+.main-sign {
+  font-family: "Gochi Hand", cursive;
+  color: white;
+  font-size: 5em;
+  font-weight: bold;
+  position: absolute;
+  top: 25%;
+  left: 0;
+  margin: 0 auto;
+  text-align: center;
+  width: 100%;
 }
 .messanger-area {
   width: 60vw;
@@ -27,34 +48,40 @@
   border-bottom: 1px solid #0a0022;
 }
 .not-hidden {
-  display: block;
+  display: block !important;
+}
+.bordered {
+  border-left: 3px solid #5e1d71;
+  border-right: 3px solid #5e1d71;
+  border-bottom: 3px solid #5e1d71;
 }
 .message-body {
-  margin: 4em 0;
+  margin: 4% 0;
   display: none;
-  height: 100px;
   font-weight: bold;
   color: #0a0022;
 }
 .not-hidden-message {
-  display: flex;
+  display: flex !important;
 }
-
+.hidden {
+  display: none;
+}
 .user-name {
-  color: #4a8cd3;
+  color: #5e1d71;
   font-weight: bold;
   margin-bottom: 0.3em;
   display: flex;
   justify-content: space-between;
 }
 .img-avatar {
-  border: 1px solid #0a0022;
+  border: 2px solid #5e1d71;
   border-radius: 100%;
 }
 .date {
   font-size: 1em;
   font-weight: normal;
-  color: #0a0022;
+  color: #5e1d71;
 }
 .name-text-message {
   padding-left: 1em;
@@ -64,7 +91,6 @@
 
 .message-input-field-area {
   background-color: white;
-  z-index: 1;
   height: 49px;
   display: flex;
   align-items: center;
@@ -86,7 +112,7 @@ input:focus {
   padding: 0;
 }
 
-button {
+.button {
   font-size: 2em;
   font-weight: bold;
   color: white;
@@ -94,10 +120,15 @@ button {
   min-width: 350px;
   min-height: 85px;
   border-radius: 25px;
-  border: 2px solid white;
-  z-index: 10;
+  border: 1px solid white;
   position: absolute;
   bottom: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.button:hover {
+  font-size: 2.08em;
 }
 .button-one {
   left: -175px;
@@ -108,14 +139,16 @@ button {
 .button-last {
   right: -175px;
 }
+
 .icon {
+  color: #5e1d71;
   height: 24px;
   margin-left: 2%;
 }
 .github-icon {
   height: 3em;
-  display: block;
   padding-bottom: 5px;
+  width: 3em;
 }
 .ReactFragmentStartSign {
   font-size: 3em;
@@ -134,8 +167,10 @@ button {
   display: none;
 }
 @media only screen and (max-width: 1170px) {
-  button {
-    display: none;
+  .button,
+  .ReactFragmentStartSign,
+  .ReactFragmentEndSign {
+    display: none !important;
   }
   .ReactFragmentStartSign {
     left: 0;
@@ -144,19 +179,60 @@ button {
     right: 0;
   }
   .messanger-area {
-    width: 80vw;
-    left: 10vw;
+    width: calc(100vw - 6px);
+    min-height: 100vh;
+    font-size: 0.5em;
+    top: 0;
+    left: 0;
   }
   .GitHubLogo {
+    display: none;
     margin-left: 5px;
     margin-top: 5px;
     font-size: 1.5em;
     font-weight: bold;
   }
-  .message-body {
-    display: flex;
+  .img-avatar {
+    height: 50px;
   }
-  input {
-    display: none;
-  }
+}
+.row {
+  display: flex;
+  margin-bottom: 5%;
+  width: 94%;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 3%;
+}
+.project-img-nonhovered {
+  opacity: 0.8;
+  border-radius: 25px;
+  width: calc(100% - 2px);
+  border: 1px solid white;
+}
+
+.row img:hover {
+  opacity: 1;
+}
+h1 {
+  margin-bottom: 0;
+  font-family: "Gochi Hand", cursive;
+  font-size: 3rem;
+
+  text-align: center;
+}
+.project-wrapper {
+  width: 49%;
+  margin-bottom: 3%;
+  overflow: hidden;
+}
+.description {
+  font-size: 1rem;
+  text-align: center;
+  width: 90%;
+  padding-bottom: 1%;
+}
+
+.back:hover {
+  color: gray;
 }
