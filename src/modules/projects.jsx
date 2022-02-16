@@ -30,7 +30,7 @@ class MyProjects extends Component {
         title: Arboleda,
         link: "https://arboleda.pl",
         class: "project-img-nonhovered",
-        description: "One-page web-site for a company",
+        description: "Arboleda company",
       },
     ],
   };

@@ -165,3 +165,24 @@ input:focus {
   width: 90%;
   padding-bottom: 1%;
 }
+
+@media only screen and (max-width: 850px) {
+  .input-field-text {
+    font-size: 0.5em;
+  }
+  .message-wrapper {
+    font-size: 0.8em;
+  }
+}
+@media only screen and (max-width: 460px) {
+  .render-area {
+    height: calc(100vh - 65px);
+    width: 100%;
+  }
+  .input-field-icons-wrapper {
+    display: none;
+  }
+  .buttons-wrapper {
+    width: 100%;
+  }
+}

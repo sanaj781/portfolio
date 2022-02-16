@@ -29,61 +29,65 @@ const App = () => {
 
   const currentLocation = useLocation().pathname;
   const handleTyping = () => {
-    const startTyping = (id) => {
-      //splitting message into symbols for animation
-      let messageBySymbols = messages[id].message.split("");
-      //Typing animation
-      let i = 0;
-      let newInputValue = "";
+    if (currentLocation !== "/projects") {
+      const startTyping = (id) => {
+        //splitting message into symbols for animation
+        let messageBySymbols = messages[id].message.split("");
+        //Typing animation
+        let i = 0;
+        let newInputValue = "";
 
-      const typingInterval = setInterval(() => {
-        if (i < messageBySymbols.length) {
-          newInputValue += messageBySymbols[i];
-          if (newInputValue.length === 1) {
-            //scrolling to the input field to
-            document
-              .getElementsByClassName("input-field-icons-wrapper")[0]
-              .scrollIntoView({ behavior: "smooth", block: "start" });
+        const typingInterval = setInterval(() => {
+          if (i < messageBySymbols.length) {
+            newInputValue += messageBySymbols[i];
+            if (newInputValue.length === 1) {
+              //scrolling to the input field to
+              document
+                .getElementsByClassName("input-field-icons-wrapper")[0]
+                .scrollIntoView({ behavior: "smooth", block: "start" });
+            }
+            i += 1;
+            setInputValue(newInputValue);
           }
-          i += 1;
-          setInputValue(newInputValue);
-        }
-        //When message has typed
-        else {
-          //getting a current date and time
-          let date = new Date();
-          const minutes =
-            date.getMinutes() < 10
-              ? "0" + date.getMinutes()
-              : date.getMinutes();
-          messages[id].date =
-            date.getDate() +
-            " " +
-            date.toLocaleString("default", { month: "long" }) +
-            " " +
-            date.getHours() +
-            ":" +
-            minutes;
+          //When message has typed
+          else {
+            //getting a current date and time
+            let date = new Date();
+            const minutes =
+              date.getMinutes() < 10
+                ? "0" + date.getMinutes()
+                : date.getMinutes();
+            messages[id].date =
+              date.getDate() +
+              " " +
+              date.toLocaleString("default", { month: "long" }) +
+              " " +
+              date.getHours() +
+              ":" +
+              minutes;
 
-          messages[id].class += " visible";
-          console.log(messages[id]);
+            messages[id].class += " visible";
 
-          clearInterval(typingInterval);
-          //Post a message
-          newInputValue = "";
-          setInputValue(newInputValue);
-          i = 0;
+            clearInterval(typingInterval);
+            //Post a message
+            newInputValue = "";
+            setInputValue(newInputValue);
+            i = 0;
 
-          if (id < messages.length - 1) {
-            id += 1;
-            startTyping(id);
-          } else {
-            setMessagesTyped(true);
+            if (id < messages.length - 1) {
+              id += 1;
+              startTyping(id);
+            } else {
+              setMessagesTyped(true);
+            }
           }
-        }
-      }, 40);
-    };
-    const myTimeout = setTimeout(() => startTyping(0), 1500);
+        }, 40);
+      };
+      const myTimeout = setTimeout(() => startTyping(0), 1500);
+    } else
+      alert(
+        "Oh, Sorry. I am working on fixing this problem. Make sure you are on the main page before reload! ;-)"
+      );
   };
 
   let MainContent = "main-content";
@@ -108,6 +112,7 @@ const App = () => {
       }
     }
   }
+
   return (
     <React.Fragment>
       <div className="app">
