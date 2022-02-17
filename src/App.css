@@ -28,7 +28,8 @@
   font-size: 3em;
   font-weight: bold;
   white-space: nowrap;
-  height: calc(100vh - 14px - 51px);
+  height: calc(100vh - 116px);
+
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -142,7 +143,7 @@ input:focus {
   justify-content: center;
 }
 
-/* project css */
+/* My projects Module CSS */
 .row {
   margin: 0 50px;
   margin-top: 3%;
