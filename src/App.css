@@ -1,12 +1,18 @@
 .app {
-  margin: 7px auto;
+  margin: 7px;
   max-width: 1600px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: calc(100% - 14px);
+  height: calc(100% - 14px);
 }
 
 .main-content-wrapper {
   display: flex;
   width: 100%;
   justify-content: center;
+  height: 100%;
 }
 .main-content {
   width: 60%;
@@ -19,8 +25,8 @@
   overflow: scroll;
 }
 .render-area-height-transition {
-  height: calc(100vh - 65px);
-  transition: height 2s;
+  height: calc(100% - 51px);
+  transition: height 1.5s;
   margin-top: 0;
 }
 .signature {
@@ -29,7 +35,6 @@
   font-weight: bold;
   white-space: nowrap;
   height: calc(100vh - 116px);
-
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -129,16 +134,14 @@ input:focus {
 }
 .backgorund-white {
   background-color: white;
+  transition: 700ms;
+  transition-delay: 0.9s;
 }
 .width-full-screen-transition {
   width: 100%;
   transition: width 2s;
 }
-.height-zero {
-  height: 0;
-  line-height: 0;
-  transition: line-height, 2s;
-}
+
 .flex-align-vertical {
   justify-content: center;
 }
@@ -182,22 +185,26 @@ input:focus {
   }
 }
 @media only screen and (max-width: 700px) {
+  .input-field-text {
+    display: none;
+  }
   .main-content {
     background-color: black;
   }
-  .render-area {
-    display: flex;
-    flex-direction: column;
-    height: calc(100vh - 65px);
-    transition: height 2s;
-    margin-top: 0;
+  .message-wrapper {
+    display: none;
   }
   .buttons-wrapper {
     display: flex;
-    width: 100%;
+    width: 85;
   }
 
   .project-wrapper {
+    width: 100%;
+  }
+  .signature {
+    position: absolute;
+    top: 51px;
     width: 100%;
   }
 }

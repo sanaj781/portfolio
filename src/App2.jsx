@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useLayoutEffect, useState } from "react";
 import "./App.css";
 import Messages from "./modules/animated-messanger";
 import MyProjects from "./modules/projects";
@@ -31,17 +31,29 @@ const App = () => {
   const [inputValue, setInputValue] = useState("Start typing to start...");
   const [inputStatus, setDisableStatus] = useState(false);
   const [messagesTyped, setMessagesTyped] = useState(false);
-  const [windowSizeChecked, setkWindowSizeChecked] = useState(false);
+  const [windowWidth, setWindowWidth] = useState();
   const currentLocation = useLocation().pathname;
+  useLayoutEffect(() => {
+    function updateWidth() {
+      setWindowWidth(window.innerWidth);
+      setClassNames();
+    }
+    window.addEventListener("resize", updateWidth);
+    updateWidth();
+    return () => {
+      window.removeEventListener("resize", updateWidth);
+    };
+  });
+
   const handleTyping = () => {
-    if (currentLocation === "/" && window.innerWidth > 700) {
+    console.log("ss");
+    if (currentLocation === "/" && windowWidth > 700) {
       //Wait till window resized
       const myTimeout = setTimeout(
         () => startTyping(0, messages, setInputValue, setMessagesTyped),
-        1500
+        650
       );
     } else {
-      setkWindowSizeChecked(true);
       setMessagesTyped(true);
       setDisableStatus(true);
     }
@@ -57,8 +69,7 @@ const App = () => {
     if (inputStatus === true) {
       MainContent += " backgorund-white";
       RenderArea += " visible flex-column render-area-height-transition";
-
-      signature = "hidden";
+      if (windowWidth > 700) signature = "hidden";
 
       if (messagesTyped === true) {
         buttonsWrapper += " visible";
@@ -73,8 +84,12 @@ const App = () => {
     }
   };
   setClassNames();
-  if (window.innerWidth <= 700 && windowSizeChecked === false) {
+  //Skip typing on mobile devices
+  if (windowWidth <= 700 && messagesTyped === false) {
     handleTyping();
+    for (let i = 0; i < messages.length; i++) {
+      messages[i].class += " visible";
+    }
   }
 
   return (
@@ -84,11 +99,7 @@ const App = () => {
           <div className={MainContent}>
             <div className={RenderArea}>
               <Routes>
-                <Route
-                  exact
-                  path="/"
-                  element={<Messages messages={messages} />}
-                />
+                <Route path="/" element={<Messages messages={messages} />} />
                 <Route
                   path="/projects"
                   element={
@@ -100,7 +111,7 @@ const App = () => {
                     />
                   }
                 />{" "}
-                <Route path="/skills" element={<MySkills />} />
+                {/* <Route path="/skills" element={<MySkills />} /> */}
                 <Route path="/main" element={<MainPage />} />
               </Routes>
             </div>
