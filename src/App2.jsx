@@ -28,7 +28,7 @@ const App = () => {
       class: "message-wrapper",
     },
   ]);
-  const [inputValue, setInputValue] = useState("Start typing to start...");
+  const [inputValue, setInputValue] = useState("Click here to start...");
   const [inputStatus, setDisableStatus] = useState(false);
   const [messagesTyped, setMessagesTyped] = useState(false);
   const [windowWidth, setWindowWidth] = useState();
@@ -46,7 +46,6 @@ const App = () => {
   });
 
   const handleTyping = () => {
-    console.log("ss");
     if (currentLocation === "/" && windowWidth > 700) {
       //Wait till window resized
       const myTimeout = setTimeout(
@@ -87,6 +86,7 @@ const App = () => {
   //Skip typing on mobile devices
   if (windowWidth <= 700 && messagesTyped === false) {
     handleTyping();
+    // show messages if screen was changed from small to big
     for (let i = 0; i < messages.length; i++) {
       messages[i].class += " visible";
     }
@@ -142,11 +142,10 @@ const App = () => {
                 value={inputValue}
                 onFocus={() => {
                   setInputValue("");
-                }}
-                onChange={() => {
-                  handleTyping();
                   setDisableStatus(true);
+                  handleTyping();
                 }}
+                onChange={() => {}}
                 className={InputFieldText}
               ></input>
             </div>
