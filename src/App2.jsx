@@ -152,8 +152,10 @@ const App = () => {
             </div>
 
             <div className={signature}>
-              Denys Shevchenko
-              <br /> Portfolio Page
+              <span>
+                Denys Shevchenko
+                <br /> Portfolio Page
+              </span>
             </div>
           </div>
         </div>
