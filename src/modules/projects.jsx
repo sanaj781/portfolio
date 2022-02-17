@@ -1,57 +1,49 @@
-import Arboleda from "../imgs/arboleda.png";
-import Calculator from "../imgs/calculator.png";
-import Shop from "../imgs/shop.png";
-import Offside from "../imgs/offside.png";
-import React, { Component } from "react";
-import { Link } from "react-router-dom";
-class MyProjects extends Component {
-  state = {
-    projects: [
-      {
-        title: Calculator,
-        link: "https://sanaj781.github.io/3Dprinter-calculator/",
-        class: "project-img-nonhovered",
-        description: "React 3D printer cost calculator",
-      },
-      {
-        title: Shop,
-        link: "https://web-create.pl/",
-        class: "project-img-nonhovered",
-        description: "Php & MySQL shop on Bootstrap",
-      },
+import React, { useState } from "react";
 
-      {
-        title: Offside,
-        link: "https://offside.com.ua/",
-        class: "project-img-nonhovered",
-        description: "Football News",
-      },
-      {
-        title: Arboleda,
-        link: "https://arboleda.pl",
-        class: "project-img-nonhovered",
-        description: "Arboleda company",
-      },
-    ],
-  };
+const MyProjects = (props) => {
+  const { Arboleda, Offside, Calculator, Shop } = props;
+  const [projects, SetProjects] = useState([
+    {
+      title: Calculator,
+      link: "https://sanaj781.github.io/3Dprinter-calculator/",
+      class: "project-img-nonhovered",
+      description: "React 3D printer cost calculator",
+    },
+    {
+      title: Shop,
+      link: "https://web-create.pl/",
+      class: "project-img-nonhovered",
+      description: "Php & MySQL shop on Bootstrap",
+    },
 
-  render() {
-    return (
-      <React.Fragment>
-        <div className="row">
-          {this.state.projects.map((project) => (
-            <div key={project.title} className="project-wrapper">
-              <a href={project.link} target="_blank" rel="noreferrer">
-                <div className="description">{project.description}</div>
+    {
+      title: Offside,
+      link: "https://offside.com.ua/",
+      class: "project-img-nonhovered",
+      description: "Football News",
+    },
+    {
+      title: Arboleda,
+      link: "https://arboleda.pl",
+      class: "project-img-nonhovered",
+      description: "Arboleda company",
+    },
+  ]);
+  return (
+    <React.Fragment>
+      <div className="row">
+        {projects.map((project) => (
+          <div key={project.title} className="project-wrapper">
+            <a href={project.link} target="_blank" rel="noreferrer">
+              <div className="description">{project.description}</div>
 
-                <img className={project.class} src={project.title} alt="" />
-              </a>
-            </div>
-          ))}
-        </div>
-      </React.Fragment>
-    );
-  }
-}
+              <img className={project.class} src={project.title} alt="" />
+            </a>
+          </div>
+        ))}
+      </div>
+    </React.Fragment>
+  );
+};
 
 export default MyProjects;

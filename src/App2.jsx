@@ -4,10 +4,15 @@ import Messages from "./modules/animated-messanger";
 import MyProjects from "./modules/projects";
 import { Route, Routes, useLocation } from "react-router-dom";
 import MySkills from "./modules/skills";
-
+import MainPage from "./modules/MainPage";
 import GitHubLogo from "./imgs/GitHub-Mark.svg";
 import CV from "./imgs/CV ENG.pdf";
 import { Link } from "react-router-dom";
+import Arboleda from "./imgs/arboleda.png";
+import Calculator from "./imgs/calculator.png";
+import Shop from "./imgs/shop.png";
+import Offside from "./imgs/offside.png";
+import { startTyping } from "./functions/startTypeFunction";
 
 const App = () => {
   const [messages] = useState([
@@ -26,68 +31,20 @@ const App = () => {
   const [inputValue, setInputValue] = useState("Start typing to start...");
   const [inputStatus, setDisableStatus] = useState(false);
   const [messagesTyped, setMessagesTyped] = useState(false);
-
+  const [windowSizeChecked, setkWindowSizeChecked] = useState(false);
   const currentLocation = useLocation().pathname;
   const handleTyping = () => {
-    if (currentLocation !== "/projects") {
-      const startTyping = (id) => {
-        //splitting message into symbols for animation
-        let messageBySymbols = messages[id].message.split("");
-        //Typing animation
-        let i = 0;
-        let newInputValue = "";
-
-        const typingInterval = setInterval(() => {
-          if (i < messageBySymbols.length) {
-            newInputValue += messageBySymbols[i];
-            if (newInputValue.length === 1) {
-              //scrolling to the input field to
-              document
-                .getElementsByClassName("input-field-icons-wrapper")[0]
-                .scrollIntoView({ behavior: "smooth", block: "start" });
-            }
-            i += 1;
-            setInputValue(newInputValue);
-          }
-          //When message has typed
-          else {
-            //getting a current date and time
-            let date = new Date();
-            const minutes =
-              date.getMinutes() < 10
-                ? "0" + date.getMinutes()
-                : date.getMinutes();
-            messages[id].date =
-              date.getDate() +
-              " " +
-              date.toLocaleString("default", { month: "long" }) +
-              " " +
-              date.getHours() +
-              ":" +
-              minutes;
-
-            messages[id].class += " visible";
-
-            clearInterval(typingInterval);
-            //Post a message
-            newInputValue = "";
-            setInputValue(newInputValue);
-            i = 0;
-
-            if (id < messages.length - 1) {
-              id += 1;
-              startTyping(id);
-            } else {
-              setMessagesTyped(true);
-            }
-          }
-        }, 40);
-      };
-      const myTimeout = setTimeout(() => startTyping(0), 1500);
-    } else
-      alert(
-        "Oh, Sorry. I am working on fixing this problem. Make sure you are on the main page before reload! ;-)"
+    if (currentLocation === "/" && window.innerWidth > 700) {
+      //Wait till window resized
+      const myTimeout = setTimeout(
+        () => startTyping(0, messages, setInputValue, setMessagesTyped),
+        1500
       );
+    } else {
+      setkWindowSizeChecked(true);
+      setMessagesTyped(true);
+      setDisableStatus(true);
+    }
   };
 
   let MainContent = "main-content";
@@ -96,21 +53,28 @@ const App = () => {
   let signature = "signature noselect";
   let buttonsWrapper = "buttons-wrapper";
   let InputFieldText = "input-field-text";
-  if (inputStatus === true) {
-    MainContent += " backgorund-white";
-    RenderArea += " visible flex-column render-area-height-transition";
+  const setClassNames = () => {
+    if (inputStatus === true) {
+      MainContent += " backgorund-white";
+      RenderArea += " visible flex-column render-area-height-transition";
 
-    signature = "hidden";
+      signature = "hidden";
 
-    if (messagesTyped === true) {
-      buttonsWrapper += " visible";
-      MainContent += " width-full-screen-transition";
-      InputFieldText = "hidden";
+      if (messagesTyped === true) {
+        buttonsWrapper += " visible";
+        MainContent += " width-full-screen-transition";
+        InputFieldText = "hidden";
 
-      if (currentLocation === "/projects") {
-        MainContent = "main-content width-full-screen-transition";
+        if (currentLocation !== "/") {
+          signature = "hidden";
+          MainContent = "main-content width-full-screen-transition";
+        }
       }
     }
+  };
+  setClassNames();
+  if (window.innerWidth <= 700 && windowSizeChecked === false) {
+    handleTyping();
   }
 
   return (
@@ -118,15 +82,26 @@ const App = () => {
       <div className="app">
         <div className="main-content-wrapper">
           <div className={MainContent}>
-            <div id="message-area" className={RenderArea}>
+            <div className={RenderArea}>
               <Routes>
                 <Route
                   exact
                   path="/"
                   element={<Messages messages={messages} />}
                 />
-                <Route path="/projects" element={<MyProjects />} />{" "}
+                <Route
+                  path="/projects"
+                  element={
+                    <MyProjects
+                      Calculator={Calculator}
+                      Shop={Shop}
+                      Offside={Offside}
+                      Arboleda={Arboleda}
+                    />
+                  }
+                />{" "}
                 <Route path="/skills" element={<MySkills />} />
+                <Route path="/main" element={<MainPage />} />
               </Routes>
             </div>
 
@@ -146,7 +121,7 @@ const App = () => {
                 <a href={CV} download>
                   <div className="button">Curriculum Vitae</div>
                 </a>
-                <Link to="/">
+                <Link to="/main">
                   <div className="button">Main</div>
                 </Link>
               </div>

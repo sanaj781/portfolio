@@ -28,8 +28,12 @@
   font-size: 3em;
   font-weight: bold;
   white-space: nowrap;
-  padding-top: 30%;
+  height: calc(100vh - 14px - 51px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
+
 .message-wrapper {
   color: black;
   display: none;
@@ -102,7 +106,7 @@ input:focus {
 .button:hover {
   color: black;
 }
-/* additional CSS */
+/* additional CSS - animation, features */
 .noselect {
   -webkit-touch-callout: none; /* iOS Safari */
   -webkit-user-select: none; /* Safari */
@@ -134,6 +138,9 @@ input:focus {
   line-height: 0;
   transition: line-height, 2s;
 }
+.flex-align-vertical {
+  justify-content: center;
+}
 
 /* project css */
 .row {
@@ -162,27 +169,50 @@ input:focus {
 .description {
   font-size: 1rem;
   text-align: center;
-  width: 90%;
   padding-bottom: 1%;
 }
 
-@media only screen and (max-width: 850px) {
+@media only screen and (max-width: 1165px) {
   .input-field-text {
-    font-size: 0.5em;
+    font-size: 0.6em;
   }
   .message-wrapper {
     font-size: 0.8em;
   }
 }
-@media only screen and (max-width: 460px) {
+@media only screen and (max-width: 700px) {
+  .main-content {
+    background-color: black;
+  }
   .render-area {
+    display: flex;
+    flex-direction: column;
     height: calc(100vh - 65px);
+    transition: height 2s;
+    margin-top: 0;
+  }
+  .buttons-wrapper {
+    display: flex;
     width: 100%;
   }
+
+  .project-wrapper {
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 460px) {
+  .input-field-icons-wrapper {
+    display: none;
+  }
+
   .input-field-icons-wrapper {
     display: none;
   }
   .buttons-wrapper {
     width: 100%;
+  }
+
+  .signature {
+    font-size: 2em;
   }
 }
