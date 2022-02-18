@@ -1,5 +1,9 @@
 import React, { useLayoutEffect, useEffect, useState } from "react";
 import "./App.css";
+import "./css/additional-features.css";
+import "./css/mediaqueries.css";
+import "./css/my-projects-component.css";
+
 import Messages from "./modules/animated-messanger";
 import MyProjects from "./modules/projects";
 import { Route, Routes, useLocation } from "react-router-dom";
@@ -34,15 +38,15 @@ const App = () => {
   const [windowWidth, setWindowWidth] = useState();
 
   const currentLocation = useLocation().pathname;
-  //Trying to preload project images
-  // useEffect(() => {
-  //   const imgs = [Arboleda, Calculator, Shop, Offside];
-  //   imgs.forEach((img) => {
-  //     const newImage = new Image();
-  //     newImage.src = img;
-  //     window[img] = newImage;
-  //   });
-  // });
+  // Trying to preload project images
+  useEffect(() => {
+    const imgs = [Arboleda, Calculator, Shop, Offside];
+    imgs.forEach((img) => {
+      const newImage = new Image();
+      newImage.src = img;
+      window[img] = newImage;
+    });
+  });
   useLayoutEffect(() => {
     function updateWidth() {
       setWindowWidth(window.innerWidth);

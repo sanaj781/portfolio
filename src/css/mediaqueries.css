@@ -1,0 +1,48 @@
+@media only screen and (max-width: 1165px) {
+  .input-field-text {
+    font-size: 0.6em;
+  }
+  .message-wrapper {
+    font-size: 0.8em;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .input-field-text {
+    display: none;
+  }
+  .main-content {
+    background-color: black;
+  }
+  .message-wrapper {
+    display: none;
+  }
+  .buttons-wrapper {
+    display: flex;
+    width: 85;
+  }
+
+  .project-wrapper {
+    width: 100%;
+  }
+  .signature {
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 460px) {
+  .input-field-icons-wrapper {
+    display: none;
+  }
+
+  .input-field-icons-wrapper {
+    display: none;
+  }
+  .buttons-wrapper {
+    width: 100%;
+  }
+
+  .signature {
+    font-size: 2em;
+  }
+}

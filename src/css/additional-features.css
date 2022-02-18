@@ -1,0 +1,33 @@
+/* additional features CSS - animation, features */
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
+                                    supported by Chrome and Opera */
+}
+.visible {
+  display: flex;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+.hidden {
+  display: none;
+}
+.backgorund-white {
+  background-color: white;
+  transition: 1000ms;
+  transition-delay: 2s;
+}
+.width-full-screen-transition {
+  width: 100%;
+  transition: width 2s;
+}
+
+.flex-align-vertical {
+  justify-content: center;
+}
