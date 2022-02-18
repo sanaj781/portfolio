@@ -13,7 +13,7 @@ const MyProjects = (props) => {
       title: Shop,
       link: "https://web-create.pl/",
       class: "project-img-nonhovered",
-      description: "Php & MySQL shop on Bootstrap",
+      description: "Php&MySQL e-shop",
     },
 
     {
@@ -26,7 +26,7 @@ const MyProjects = (props) => {
       title: Arboleda,
       link: "https://arboleda.pl",
       class: "project-img-nonhovered",
-      description: "Arboleda company",
+      description: "Arboleda",
     },
   ];
   return (
