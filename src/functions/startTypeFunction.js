@@ -10,9 +10,6 @@ export function startTyping(id, messages, setInputValue, setMessagesTyped) {
       newInputValue += messageBySymbols[i];
       if (newInputValue.length === 1) {
         //scrolling to the input field to
-        document
-          .getElementsByClassName("input-field-icons-wrapper")[0]
-          .scrollIntoView({ behavior: "smooth", block: "start" });
       }
       i += 1;
       setInputValue(newInputValue);
@@ -35,10 +32,17 @@ export function startTyping(id, messages, setInputValue, setMessagesTyped) {
       messages[id].class += " visible";
 
       clearInterval(typingInterval);
-      //Post a message
       newInputValue = "";
+
       setInputValue(newInputValue);
       i = 0;
+
+      //scrolling to the last message - always keeps in focus
+      document
+        .getElementsByClassName("message-wrapper")
+        [
+          document.getElementsByClassName("message-wrapper").length - 1
+        ].scrollIntoView({ behavior: "smooth" });
 
       if (id < messages.length - 1) {
         id += 1;

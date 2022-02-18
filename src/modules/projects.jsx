@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 const MyProjects = (props) => {
   const { Arboleda, Offside, Calculator, Shop } = props;
-  const [projects, SetProjects] = useState([
+  const projects = [
     {
       title: Calculator,
       link: "https://sanaj781.github.io/3Dprinter-calculator/",
@@ -28,7 +28,7 @@ const MyProjects = (props) => {
       class: "project-img-nonhovered",
       description: "Arboleda company",
     },
-  ]);
+  ];
   return (
     <React.Fragment>
       <div className="row">

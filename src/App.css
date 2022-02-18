@@ -22,10 +22,11 @@
   width: 100%;
   height: 0;
   overflow: scroll;
+  flex-shrink: 0;
 }
 .render-area-height-transition {
   height: calc(100% - 51px);
-  transition: height 1.5s;
+  transition: height 2s;
   margin-top: 0;
 }
 .signature {
@@ -44,8 +45,9 @@
 .message-wrapper {
   color: black;
   display: none;
-  padding: 50px 10px;
+  padding: 50px 30px;
   font-size: 1.3em;
+  flex-shrink: 0;
 }
 .img-avatar {
   width: 121px;
@@ -135,8 +137,8 @@ input:focus {
 }
 .backgorund-white {
   background-color: white;
-  transition: 700ms;
-  transition-delay: 0.9s;
+  transition: 1000ms;
+  transition-delay: 2s;
 }
 .width-full-screen-transition {
   width: 100%;

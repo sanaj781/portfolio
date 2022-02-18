@@ -1,8 +1,9 @@
-import React, { Component } from "react";
+import React from "react";
 import avatar from "../imgs/avatar.jpg";
 
 const Messages = (props) => {
   const { messages } = props;
+
   return (
     <React.Fragment>
       {messages.map((message) => (

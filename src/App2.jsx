@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useState } from "react";
+import React, { useLayoutEffect, useEffect, useState } from "react";
 import "./App.css";
 import Messages from "./modules/animated-messanger";
 import MyProjects from "./modules/projects";
@@ -32,7 +32,17 @@ const App = () => {
   const [inputStatus, setDisableStatus] = useState(false);
   const [messagesTyped, setMessagesTyped] = useState(false);
   const [windowWidth, setWindowWidth] = useState();
+
   const currentLocation = useLocation().pathname;
+  //Trying to preload project images
+  // useEffect(() => {
+  //   const imgs = [Arboleda, Calculator, Shop, Offside];
+  //   imgs.forEach((img) => {
+  //     const newImage = new Image();
+  //     newImage.src = img;
+  //     window[img] = newImage;
+  //   });
+  // });
   useLayoutEffect(() => {
     function updateWidth() {
       setWindowWidth(window.innerWidth);
@@ -40,6 +50,7 @@ const App = () => {
     }
     window.addEventListener("resize", updateWidth);
     updateWidth();
+
     return () => {
       window.removeEventListener("resize", updateWidth);
     };
@@ -50,7 +61,7 @@ const App = () => {
       //Wait till window resized
       const myTimeout = setTimeout(
         () => startTyping(0, messages, setInputValue, setMessagesTyped),
-        650
+        2000
       );
     } else {
       setMessagesTyped(true);
