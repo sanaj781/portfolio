@@ -5,10 +5,8 @@
   .message-wrapper {
     font-size: 0.8em;
   }
-  .description {
-    font-size: 0.7em;
-  }
 }
+
 @media only screen and (max-width: 700px) {
   .input-field-text {
     display: none;
@@ -25,11 +23,14 @@
   }
 
   .project-wrapper {
-    width: 100%;
+    width: 100% !important;
   }
   .signature {
     position: absolute;
     top: 0;
+    width: 100%;
+  }
+  .project-wrapper {
     width: 100%;
   }
 }
