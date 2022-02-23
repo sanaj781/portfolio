@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useState } from "react";
+import React, { useState } from "react";
 import "./App.css";
 import "./css/additional-features.css";
 import "./css/mediaqueries.css";
