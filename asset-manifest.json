@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.c761226b.css",
+    "main.css": "/portfolio/static/css/main.c3630ce2.css",
     "main.js": "/portfolio/static/js/main.aa7443db.js",
     "static/js/787.1ed0c42c.chunk.js": "/portfolio/static/js/787.1ed0c42c.chunk.js",
     "static/media/CV ENG.pdf": "/portfolio/static/media/CV ENG.58212dbae6f1e38462ac.pdf",
@@ -10,12 +10,12 @@
     "static/media/calculator.png": "/portfolio/static/media/calculator.da268495df05610fceae.png",
     "static/media/GitHub-Mark.svg": "/portfolio/static/media/GitHub-Mark.b042b67091d686bdfff07bb76b568283.svg",
     "index.html": "/portfolio/index.html",
-    "main.c761226b.css.map": "/portfolio/static/css/main.c761226b.css.map",
+    "main.c3630ce2.css.map": "/portfolio/static/css/main.c3630ce2.css.map",
     "main.aa7443db.js.map": "/portfolio/static/js/main.aa7443db.js.map",
     "787.1ed0c42c.chunk.js.map": "/portfolio/static/js/787.1ed0c42c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.c761226b.css",
+    "static/css/main.c3630ce2.css",
     "static/js/main.aa7443db.js"
   ]
 }
