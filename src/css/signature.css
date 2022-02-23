@@ -1,0 +1,13 @@
+.signature {
+  text-align: center;
+  font-size: 3em;
+  font-weight: bold;
+  white-space: nowrap;
+  height: calc(100% - 51px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.signature span {
+  padding-bottom: 51px;
+}

@@ -1,0 +1,34 @@
+.app {
+  margin: 7px auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: calc(100% - 14px);
+  min-height: 250px;
+}
+
+.main-content-wrapper {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  height: 100%;
+  max-width: 2560px;
+  margin: 0 auto;
+}
+.main-content {
+  width: 60%;
+  border-radius: 25px;
+}
+
+.render-area {
+  width: 100%;
+  height: 0;
+  overflow: scroll;
+  flex-shrink: 0;
+}
+.render-area-height-transition {
+  height: calc(100% - 51px);
+  transition: height 2s;
+  margin-top: 0;
+}
