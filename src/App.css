@@ -35,5 +35,4 @@
 .render-area-height-transition {
   height: calc(100% - 51px);
   transition: height 2s;
-  margin-top: 0;
 }

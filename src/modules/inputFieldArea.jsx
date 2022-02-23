@@ -56,12 +56,13 @@ const InputFieldArea = () => {
         </Link>
       </div>
       <input
+        readOnly
         disabled={animationContext.inputFieldStatus}
         type="text"
         value={inputValue}
         onFocus={() => {
-          setInputValue("");
           animationContext.disableInputFieldHandler(true);
+          setInputValue("");
           handleTyping();
         }}
         onChange={() => {}}
