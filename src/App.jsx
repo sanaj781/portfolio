@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
 import "./css/additional-features.css";
 import "./css/mediaqueries.css";
@@ -16,8 +16,18 @@ import {
   inputFieldTextClass,
   setClassNames,
 } from "./functions/setClassNames";
-
+import { imgs } from "./export-data/projects";
 const App = () => {
+  const myImgs = imgs;
+  //Preloading images for smooth behavior
+  useEffect(() => {
+    myImgs.forEach((img) => {
+      const newImage = new Image();
+      newImage.src = img;
+      window[img] = newImage;
+    });
+  });
+
   const [allMessages, setAllMessages] = useState(messages);
   //For disabling an input field on focus
   const [inputFieldStatus, setinputFieldStatus] = useState(false);

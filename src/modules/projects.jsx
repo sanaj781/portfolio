@@ -6,15 +6,6 @@ const MyProjects = () => {
   //Preloading images
 
   const myProjects = projects;
-  const myImgs = imgs;
-  //Preloading images
-  useEffect(() => {
-    myImgs.forEach((img) => {
-      const newImage = new Image();
-      newImage.src = img;
-      window[img] = newImage;
-    });
-  });
 
   return (
     <React.Fragment>

@@ -13,7 +13,7 @@ const InputFieldArea = () => {
   const typingStatusUpdate = () =>
     animationContext.updateTypeStatusHandler("done");
   const handleTyping = () => {
-    if (currentLocation === "/portfolio") {
+    if (currentLocation === "/portfolio/") {
       const messages = [...animationContext.messages];
       //Initiazing an update function for Context class changing and rerendering
       const udpateMessages = function () {
