@@ -17,7 +17,6 @@ export function typingMessages(
       document
         .getElementsByClassName("input-field-wrapper")[0]
         .scrollIntoView({ behavior: "smooth" });
-      console.log("2");
     };
     if (inputValue.length === 0) {
       //scrolling to the input field

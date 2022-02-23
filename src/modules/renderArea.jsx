@@ -11,7 +11,7 @@ const RenderArea = () => {
   return (
     <div className={RenderAreaClass}>
       <Routes>
-        <Route path="/" element={<Messages />} />
+        <Route path="/portfolio" element={<Messages />} />
         <Route path="/projects" element={<MyProjects />} />
         <Route path="/main" element={<MainPage />} />
       </Routes>
