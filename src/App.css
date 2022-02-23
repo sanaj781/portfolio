@@ -15,13 +15,18 @@
   height: 100%;
   max-width: 2560px;
   margin: 0 auto;
+  min-width: 410px;
 }
 .main-content {
   width: 60%;
   border-radius: 25px;
 }
-
+.render-area::-webkit-scrollbar {
+  width: 0 !important;
+  display: none;
+}
 .render-area {
+  scrollbar-width: none;
   width: 100%;
   height: 0;
   overflow: scroll;

@@ -18,7 +18,7 @@ export const mainContentClass = { value: "main-content" },
           "main-content backgorund-white width-full-screen-transition";
         inputFieldTextClass.value = "hidden";
 
-        if (currentLocation !== "/portfolio/") {
+        if (currentLocation !== "/") {
           signatureClass.value = "hidden";
           mainContentClass.value = "main-content width-full-screen-transition";
         }

@@ -35,14 +35,15 @@ input:focus {
 }
 .button {
   margin-right: 5px;
-  font-size: 1.5em;
+  font-size: 1.3em;
   font-weight: bold;
-  padding: 8px;
-  background-color: gray;
-  border: 1px solid #0a0022;
+  padding: calc((50px - 1.5em) / 2);
+  background-color: rgb(53, 53, 53);
+  border: 0.5px solid black;
   border-radius: 7px;
   white-space: nowrap;
 }
 .button:hover {
+  background-color: whitesmoke;
   color: black;
 }

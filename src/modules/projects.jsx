@@ -1,10 +1,8 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "../css/projects.css";
-import { imgs, projects } from "../export-data/projects";
+import { projects } from "../export-data/projects";
 
 const MyProjects = () => {
-  //Preloading images
-
   const myProjects = projects;
 
   return (
