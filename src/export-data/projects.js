@@ -2,8 +2,16 @@ import Arboleda from "../imgs/arboleda.png";
 import Calculator from "../imgs/calculator.png";
 import Shop from "../imgs/shop.png";
 import Offside from "../imgs/offside.png";
-export const imgs = [Arboleda, Calculator, Shop, Offside],
+import FuelApp from "../imgs/fuelApp.png";
+
+export const imgs = [Arboleda, Calculator, Shop, Offside, FuelApp],
   projects = [
+    {
+      imgSrc: FuelApp,
+      link: "https://github.com/sanaj781/FuelApp",
+      class: "project-img-nonhovered",
+      description: "FleetManager mobile app",
+    },
     {
       imgSrc: Calculator,
       link: "https://sanaj781.github.io/3Dprinter-calculator/",
