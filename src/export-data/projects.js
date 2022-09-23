@@ -7,12 +7,6 @@ import FuelApp from "../imgs/fuelApp.png";
 export const imgs = [Arboleda, Calculator, Shop, Offside, FuelApp],
   projects = [
     {
-      imgSrc: FuelApp,
-      link: "https://github.com/sanaj781/FuelApp",
-      class: "project-img-nonhovered",
-      description: "FleetManager mobile app",
-    },
-    {
       imgSrc: Calculator,
       link: "https://github.com/sanaj781/3Dprinter-calculator",
       class: "project-img-nonhovered",
@@ -36,5 +30,11 @@ export const imgs = [Arboleda, Calculator, Shop, Offside, FuelApp],
       link: "https://arboleda.pl",
       class: "project-img-nonhovered",
       description: "Arboleda",
+    },
+    {
+      imgSrc: FuelApp,
+      link: "https://github.com/sanaj781/FuelApp",
+      class: "project-img-nonhovered",
+      description: "FleetManager mobile app",
     },
   ];
