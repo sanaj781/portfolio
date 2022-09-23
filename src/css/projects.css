@@ -13,8 +13,7 @@
 }
 .project-img-nonhovered {
   opacity: 0.8;
-  border-bottom-left-radius: 80px;
-  border-top-right-radius: 80px;
+
   width: calc(100% - 2px);
   border: 1px solid white;
 }
