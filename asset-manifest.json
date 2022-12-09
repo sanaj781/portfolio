@@ -1,9 +1,9 @@
 {
   "files": {
     "main.css": "/portfolio/static/css/main.87463893.css",
-    "main.js": "/portfolio/static/js/main.47c44829.js",
+    "main.js": "/portfolio/static/js/main.3b4282ef.js",
     "static/js/787.1ed0c42c.chunk.js": "/portfolio/static/js/787.1ed0c42c.chunk.js",
-    "static/media/Denys Shevchenko CV ENG.pdf": "/portfolio/static/media/Denys Shevchenko CV ENG.08ce085a7e8beea6da1e.pdf",
+    "static/media/Denys Shevchenko CV ENG.pdf": "/portfolio/static/media/Denys Shevchenko CV ENG.99fe487046a9b60e8c06.pdf",
     "static/media/offside.png": "/portfolio/static/media/offside.33ada9c5ca118705febc.png",
     "static/media/shop.png": "/portfolio/static/media/shop.2cc5df35e18fde59d212.png",
     "static/media/arboleda.png": "/portfolio/static/media/arboleda.0b6b22d26409832ded2e.png",
@@ -12,11 +12,11 @@
     "static/media/GitHub-Mark.svg": "/portfolio/static/media/GitHub-Mark.b042b67091d686bdfff07bb76b568283.svg",
     "index.html": "/portfolio/index.html",
     "main.87463893.css.map": "/portfolio/static/css/main.87463893.css.map",
-    "main.47c44829.js.map": "/portfolio/static/js/main.47c44829.js.map",
+    "main.3b4282ef.js.map": "/portfolio/static/js/main.3b4282ef.js.map",
     "787.1ed0c42c.chunk.js.map": "/portfolio/static/js/787.1ed0c42c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.87463893.css",
-    "static/js/main.47c44829.js"
+    "static/js/main.3b4282ef.js"
   ]
 }
