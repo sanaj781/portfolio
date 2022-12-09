@@ -1,6 +1,6 @@
 import React, { useState, useContext } from "react";
 import "../css/inputFieldArea.css";
-import CV from "../imgs/CV ENG.pdf";
+import CV from "../imgs/Denys Shevchenko CV ENG.pdf";
 import GitHubLogo from "../imgs/GitHub-Mark.svg";
 import { Link, useLocation } from "react-router-dom";
 import { typingMessages } from "../functions/startTypeFunction";
