@@ -3,9 +3,16 @@ import Calculator from "../imgs/calculator.png";
 import Shop from "../imgs/shop.png";
 import Offside from "../imgs/offside.png";
 import FuelApp from "../imgs/fuelApp.png";
+import ReactShop from "../imgs/reacthop.png";
 
 export const imgs = [Arboleda, Calculator, Shop, Offside, FuelApp],
   projects = [
+    {
+      imgSrc: ReactShop,
+      link: "https://sanaj781.github.io/reactshop/",
+      class: "project-img-nonhovered",
+      description: "Online shop frontEnd on React.js ",
+    },
     {
       imgSrc: Calculator,
       link: "https://github.com/sanaj781/3Dprinter-calculator",
