@@ -1,23 +1,23 @@
 {
   "files": {
     "main.css": "/portfolio/static/css/main.87463893.css",
-    "main.js": "/portfolio/static/js/main.36ce38a5.js",
+    "main.js": "/portfolio/static/js/main.48a17f6c.js",
     "static/js/787.1ed0c42c.chunk.js": "/portfolio/static/js/787.1ed0c42c.chunk.js",
     "static/media/Denys Shevchenko CV ENG.pdf": "/portfolio/static/media/Denys Shevchenko CV ENG.99fe487046a9b60e8c06.pdf",
     "static/media/offside.png": "/portfolio/static/media/offside.33ada9c5ca118705febc.png",
     "static/media/shop.png": "/portfolio/static/media/shop.2cc5df35e18fde59d212.png",
     "static/media/arboleda.png": "/portfolio/static/media/arboleda.0b6b22d26409832ded2e.png",
-    "static/media/fuelApp.png": "/portfolio/static/media/fuelApp.842980c27c51b837b0d4.png",
+    "static/media/fuelApp.png": "/portfolio/static/media/fuelApp.adb19d2edab8d141042e.png",
     "static/media/reacthop.png": "/portfolio/static/media/reacthop.bff029590763370867a0.png",
     "static/media/calculator.png": "/portfolio/static/media/calculator.0293ed423e73c6374aa5.png",
     "static/media/GitHub-Mark.svg": "/portfolio/static/media/GitHub-Mark.b042b67091d686bdfff07bb76b568283.svg",
     "index.html": "/portfolio/index.html",
     "main.87463893.css.map": "/portfolio/static/css/main.87463893.css.map",
-    "main.36ce38a5.js.map": "/portfolio/static/js/main.36ce38a5.js.map",
+    "main.48a17f6c.js.map": "/portfolio/static/js/main.48a17f6c.js.map",
     "787.1ed0c42c.chunk.js.map": "/portfolio/static/js/787.1ed0c42c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.87463893.css",
-    "static/js/main.36ce38a5.js"
+    "static/js/main.48a17f6c.js"
   ]
 }
